@@ -1,7 +1,7 @@
 {
   "name": "av007-couchbase",
   "version": "0.1.0",
-  "author": "Vladimir Avdeev",
+  "author": "av007",
   "license": "Apache-2.0",
   "summary": "Couchbase module",
   "source": "https://github.com/av007/couchbase",
