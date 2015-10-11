@@ -1,0 +1,26 @@
+{
+  "name": "av007-couchbase",
+  "version": "0.1.0",
+  "author": "Vladimir Avdeev",
+  "license": "Apache-2.0",
+  "summary": "Couchbase module",
+  "source": "https://github.com/av007/couchbase",
+  "project_page": "https://forge.puppetlabs.com/examplecorp/mymodule",
+  "issues_url": "https://github.com/av007/couchbase/issues",
+  "tags": ["things", "stuff"],
+  "operatingsystem_support": [
+    {
+      "operatingsystem":"RedHat",
+      "operatingsystemrelease":[ "5.0", "6.0" ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [ "12.04", "10.04" ]
+    }
+  ],
+  "dependencies": [
+    { "name": "puppetlabs/stdlib", "version_requirement": ">=3.2.0 <5.0.0" },
+    { "name": "puppetlabs/firewall", "version_requirement": ">= 0.0.4" },
+    { "name": "puppetlabs/concat", "version_requirement": ">= 1.0.0 <2.0.0" }
+  ]
+}
