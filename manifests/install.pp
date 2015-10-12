@@ -12,7 +12,7 @@ class couchbase::install {
 
   exec {'couchbase_install_lib_packaes':
     cwd     => '/tmp/',
-    command => "sudo yum install -y libcouchbase2 libcouchbase-devel",
+    command => "sudo ${couchbase::params::installer} libevent-dev libcouchbase2 libcouchbase-devel",
     timeout => 1200
   }
 
@@ -24,7 +24,7 @@ class couchbase::install {
 
   exec {'couchbase_install_package':
     cwd     => '/tmp/',
-    command => "sudo ${couchbase::params::installer} -i /opt/couchbase-server-enterprise-4.0.0-centos6.x86_64.rpm",
+    command => "sudo ${couchbase::params::installer} /opt/couchbase-server-enterprise-4.0.0-centos6.x86_64.rpm",
     require => [Package[$couchbase::params::package]],
     unless  => '/usr/bin/test -d /opt/couchbase/'
   }
