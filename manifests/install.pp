@@ -4,15 +4,22 @@ class couchbase::install {
     ensure => present,
   }
 
+  exec {'couchbase_add_repo_libevent':
+    cwd     => '/tmp/',
+    command => "sudo /usr/bin/wget -q -O - atomicorp.com/installers/atomic | sh",
+    timeout => 1200
+  }
+
   exec {'couchbase_add_lib_repo':
     cwd     => '/tmp/',
     command => "sudo /usr/bin/wget -O /etc/yum.repos.d/couchbase.repo http://packages.couchbase.com/rpm/couchbase-centos62-x86_64.repo",
     timeout => 1200
   }
 
+  # for ubuntu install libevent-dev instead of libevent-devel
   exec {'couchbase_install_lib_packaes':
     cwd     => '/tmp/',
-    command => "sudo ${couchbase::params::installer} libevent-dev libcouchbase2 libcouchbase-devel",
+    command => "sudo ${couchbase::params::installer} libevent libevent-devel libcouchbase2 libcouchbase-devel",
     timeout => 1200
   }
 
