@@ -7,7 +7,8 @@ class couchbase::install {
   exec {'couchbase_add_repo_libevent':
     cwd     => '/tmp/',
     command => "sudo /usr/bin/wget -q -O - atomicorp.com/installers/atomic | sh",
-    timeout => 1200
+    timeout => 1200,
+    creates  => "/opt/couchbase"
   }
 
   exec {'couchbase_add_lib_repo':
