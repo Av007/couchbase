@@ -1,5 +1,5 @@
 name    'av007-couchbase'
-version '0.2.3'
+version '0.3.0'
 source 'https://github.com/av007/couchbase'
 author 'av007'
 license 'Apache License, Version 2.0'
